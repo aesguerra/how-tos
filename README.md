@@ -3,7 +3,7 @@
 ## How to install JAVA 8
 Using root or sudoer account
 
-### Updatev yum
+### Update yum
 ```
 yum -y update
 ```
@@ -23,14 +23,19 @@ java -version
 update-alternatives --config java
 ```
 
+### Link java home to /usr/local
+```
+ln -snf /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64/jre /usr/local/jdk1.8
+```
+
 ### Setting Java Path on your Environment
 ```
-vi .bash_profile
+vi .bashrc
 
-export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64/jre/bin/java
+export JAVA_HOME=/usr/local/jdk1.8
 
 # refresh file
-. .bash_profile
+. .bashrc
 
 # echo java home
 echo $JAVA_HOME
